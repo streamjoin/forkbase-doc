@@ -6,7 +6,7 @@ Please refer to [this post](https://blog.acolyer.org/2018/06/01/forkbase-an-effi
 
 ## Index of Contents ##
 
-### [Installing Dependencies](installation/install-dependencies.md) ###
+### [Installing Dependencies](installation/install-deps.md) ###
 
 This documentation shows the key compilation commands and environment variable settings for installing ForkBase dependencies. All the dependencies are installed through the corresponding source-code releases. [>>](installation/install-deps.md)
 
