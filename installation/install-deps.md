@@ -1,6 +1,6 @@
 # Installing ForkBase Dependencies #
 
-Quick Reference (alphabetical order): [boost](#boost), [ccache](#ccache), [CMake](#cmake), [crypto++](#crypto), [CZMQ](#czmq), [gflags](#gflags), [gtest](#google-test), [JDK](#jdk), [Maven](#maven), [OpenSSL](#openssl), [protobuf](#protocol-buffers), [RocksDB](#rocksdb), [ZMQ](#zmq) 
+Quick Reference (A-Z order): [boost](#boost), [ccache](#ccache), [CMake](#cmake), [crypto++](#crypto), [CZMQ](#czmq), [gflags](#gflags), [gtest](#google-test), [JDK](#jdk), [Maven](#maven), [OpenSSL](#openssl), [protobuf](#protocol-buffers), [RocksDB](#rocksdb), [ZMQ](#zmq) 
 
 This documentation shows the key compilation commands and environment variable settings for installing ForkBase dependencies. All the dependencies are installed through the corresponding source-code releases. Generally, in order to install a dependency, you need to 
 
