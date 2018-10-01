@@ -20,7 +20,7 @@ The following commands and settings have been manually verified on Ubuntu 16.04 
 
 Ubuntu:
 
-    $ sudo apt install build-essential
+    $ sudo apt install build-essential autoconf pkg-config libtool
 
 RHEL/CentOS/Fedora:
 
@@ -37,9 +37,9 @@ Note that the parallelism of compilation is set to the number of CPU cores by de
 
 ## Core ##
 
-### [CMake](https://cmake.org/download/) ###
+### CMake ###
 
-Minimum required version: `3.11`
+Minimum required version: `3.11` ([*download*](https://cmake.org/download/))
 
 #### Installing CMake ####
 
@@ -51,7 +51,9 @@ Minimum required version: `3.11`
     export CMAKE_HOME="$SHARE_HOME/cmake"
     export PATH="$CMAKE_HOME/bin:$PATH"
 
-### [OpenSSL](https://www.openssl.org/source/) ###
+### OpenSSL ###
+
+[*download*](https://www.openssl.org/source/)
 
 Ubuntu:
 
@@ -64,9 +66,9 @@ RHEL/CentOS/Fedora:
 
 ***[TODO]*** *Need to figure out how to install OpenSSL via source code.* 
 
-### [Boost](https://www.boost.org/users/download/) ###
+### Boost ###
 
-Minimum required version: `1.66.0`
+Minimum required version: `1.66.0` ([*download*](https://www.boost.org/users/download/))
 
 #### Installing Boost ####
 
@@ -80,9 +82,9 @@ Minimum required version: `1.66.0`
     export LD_LIBRARY_PATH="$BOOST_ROOT/lib:$LD_LIBRARY_PATH"
     export LIBRARY_PATH="$BOOST_ROOT/lib:$LIBRARY_PATH"
 
-### [Gflags](https://github.com/gflags/gflags/releases) ###
+### Gflags ###
 
-Minimum required version: `2.1.1`
+Minimum required version: `2.1.1` ([*download*](https://github.com/gflags/gflags/releases))
 
 #### Installing Gflags ####
 
@@ -98,9 +100,9 @@ Minimum required version: `2.1.1`
     export CMAKE_INCLUDE_PATH="$GFLAGS_ROOT/include:$CMAKE_INCLUDE_PATH"
     export CMAKE_LIBRARY_PATH="$GFLAGS_ROOT/lib:$CMAKE_LIBRARY_PATH"
 
-### [Protocol Buffers](https://github.com/google/protobuf/releases/) ###
+### Protocol Buffers ###
 
-Minimum required version: `2.6.1`
+Minimum required version: `2.6.1` ([*download*](https://github.com/google/protobuf/releases/))
 
 #### Installing Protobuf ####
 
@@ -117,9 +119,9 @@ Minimum required version: `2.6.1`
     export CMAKE_INCLUDE_PATH="$PROTOBUF_ROOT/include:$CMAKE_INCLUDE_PATH"
     export CMAKE_LIBRARY_PATH="$PROTOBUF_ROOT/lib:$CMAKE_LIBRARY_PATH"
 
-### [Crypto++](https://www.cryptopp.com/#download) ###
+### Crypto++ ###
 
-Minimum required version: `6.1.0`
+Minimum required version: `6.1.0` ([*download*](https://www.cryptopp.com/#download))
 
 #### Installing Crypto++ ####
 
@@ -135,9 +137,9 @@ Minimum required version: `6.1.0`
     export CMAKE_INCLUDE_PATH="$CRYPTOPP_ROOT/include:$CMAKE_INCLUDE_PATH"
     export CMAKE_LIBRARY_PATH="$CRYPTOPP_ROOT/lib:$CMAKE_LIBRARY_PATH"
 
-### [ZMQ](https://github.com/zeromq/libzmq/releases) ###
+### ZMQ ###
 
-Minimum required version: `4.2.1`
+Minimum required version: `4.2.1` ([*download*](https://github.com/zeromq/libzmq/releases))
 
 #### Installing ZMQ ####
 
@@ -153,9 +155,9 @@ Minimum required version: `4.2.1`
     export CMAKE_INCLUDE_PATH="$ZMQ_ROOT/include:$CMAKE_INCLUDE_PATH"
     export CMAKE_LIBRARY_PATH="$ZMQ_ROOT/lib:$CMAKE_LIBRARY_PATH"
 
-### [CZMQ](https://github.com/zeromq/czmq/releases) ###
+### CZMQ ###
 
-Minimum required version: `4.0.2`
+Minimum required version: `4.0.2` ([*download*](https://github.com/zeromq/czmq/releases))
 
 #### Installing CZMQ ####
 
@@ -171,9 +173,9 @@ Minimum required version: `4.0.2`
     export CMAKE_INCLUDE_PATH="$CZMQ_ROOT/include:$CMAKE_INCLUDE_PATH"
     export CMAKE_LIBRARY_PATH="$CZMQ_ROOT/lib:$CMAKE_LIBRARY_PATH"
 
-### [RocksDB](https://github.com/facebook/rocksdb/releases) ###
+### RocksDB ###
 
-Minimum required version: `5.8`
+Minimum required version: `5.8` ([*download*](https://github.com/facebook/rocksdb/releases))
 
 #### Resolving RocksDB Dependencies ####
 
@@ -201,9 +203,9 @@ RHEL/CentOS/Fedora:
 
 ## Optional ##
 
-### [Google Test](https://github.com/google/googletest/releases) ###
+### Google Test ###
 
-Minimum required version: `1.8.0`
+Minimum required version: `1.8.0` ([*download*](https://github.com/google/googletest/releases))
 
 #### Installing Gtest ####
 
@@ -220,7 +222,9 @@ Minimum required version: `1.8.0`
     export CMAKE_INCLUDE_PATH="$GTEST_ROOT/include:$CMAKE_INCLUDE_PATH"
     export CMAKE_LIBRARY_PATH="$GTEST_LIB_DIR:$CMAKE_LIBRARY_PATH"
 
-### [JDK](http://www.oracle.com/technetwork/java/javase/downloads/index.html) ###
+### JDK ###
+
+[*download*](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
 
 #### Setting JDK Environment Variables #### 
 
@@ -231,7 +235,9 @@ Minimum required version: `1.8.0`
 
 You should change `JAVA_VER` according to your downloaded version.
 
-### [Maven](https://maven.apache.org/download.cgi) ###
+### Maven ###
+
+[*download*](https://maven.apache.org/download.cgi)
 
 #### Setting Maven Environment Variables #### 
 
@@ -246,7 +252,9 @@ You should change `MAVEN_VER` according to your downloaded version.
 
 The following are not ForkBase dependencies. Instead, they could facilitate your development work. 
 
-### [Ccache](https://ccache.samba.org/download.html) ###
+### Ccache ###
+
+[*download*](https://ccache.samba.org/download.html)
 
 #### Installing Ccache ####
 
