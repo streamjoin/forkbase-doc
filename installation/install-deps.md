@@ -268,3 +268,10 @@ The following are not ForkBase dependencies. Instead, they could facilitate your
     export CCACHE_HOME="$SHARE_HOME/ccache"
     export PATH="$CCACHE_HOME/bin:$PATH"
     export MANPATH="$CCACHE_HOME/share/man:$MANPATH"
+
+You may also configure caching properties using `-F` and `-M` options. For example, 
+
+    $ ccache -F  # this sets no limit to the number of files
+    $ ccache -M 1G  # this sets the cache size to 1 GB
+
+ 
