@@ -25,6 +25,7 @@ Ubuntu:
 RHEL/CentOS/Fedora:
 
     $ sudo yum group install "Development Tools" "C Development Tools and Libraries"
+    $ sudo yum install psmisc
 
 Make sure the GCC version is `4.9` or higher. 
 
