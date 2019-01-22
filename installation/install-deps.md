@@ -4,7 +4,7 @@
 
 This documentation shows the key compilation commands and environment variable settings for installing ForkBase dependencies. All the dependencies are installed through the corresponding source-code releases. Generally, in order to install a dependency, you need to 
 
-1. download the source code package (`.gz`, `.bz2` or `.zip`), 
+1. download the **source code** package (`.gz`, `.bz2` or `.zip`), 
 2. unzip the package, 
 3. go to the unzipped folder (i.e., root of the source code),
 4. run the compilation commands listed below, and 
@@ -33,6 +33,8 @@ Make sure the GCC version is `4.9` or higher.
 
     export SHARE_HOME="/path/to/dependency/share"
     export NCORES="$(cat /proc/cpuinfo | grep "cpu cores" | uniq | awk '{print $NF}')"
+
+Ensure the current user has write permission to the folder path specified by `SHARE_HOME`; otherwise, you may need administrative privileges for running installation, e.g., by adding `sudo` in front of `make install`. 
 
 Note that the parallelism of compilation is set to the number of CPU cores by default, as defined in the `NCORES` environment variable. You may change it to any parallelism as you want. 
 
@@ -227,27 +229,39 @@ Minimum required version: `1.8.0` ([*download*](https://github.com/google/google
 
 [*download*](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
 
+#### Installing JDK ####
+
+    $ mkdir -p $SHARE_HOME/java/
+
+Copy the unzipped `jdk-xxx` folder to `$SHARE_HOME/java/`.
+
 #### Setting JDK Environment Variables #### 
 
     # JDK
-    export JAVA_VER=10.0.2
-    export JAVA_HOME=$SHARE_HOME/java/jdk-$JAVA_VER
-    export PATH=$JAVA_HOME/bin:$PATH
+    export JAVA_VER="11.0.2"
+    export JAVA_HOME="$SHARE_HOME/java/jdk-$JAVA_VER"
+    export PATH="$JAVA_HOME/bin:$PATH"
 
-You should change `JAVA_VER` according to your downloaded version.
+You should set `JAVA_VER` according to your downloaded version.
 
 ### Maven ###
 
 [*download*](https://maven.apache.org/download.cgi)
 
+#### Installing Maven ####
+
+    $ mkdir -p $SHARE_HOME/maven/
+
+Copy the unzipped `apache-maven-xxx` folder to `$SHARE_HOME/maven/`.
+
 #### Setting Maven Environment Variables #### 
 
     # Maven
-    export MAVEN_VER=3.5.4
-    export MAVEN_HOME=$SHARE_HOME/maven/apache-maven-$MAVEN_VER
-    export PATH=$MAVEN_HOME/bin:$PATH
+    export MAVEN_VER="3.5.4"
+    export MAVEN_HOME="$SHARE_HOME/maven/apache-maven-$MAVEN_VER"
+    export PATH="$MAVEN_HOME/bin:$PATH"
 
-You should change `MAVEN_VER` according to your downloaded version.
+You should set `MAVEN_VER` according to your downloaded version.
 
 ## Other ##
 
@@ -260,8 +274,7 @@ The following are not ForkBase dependencies. Instead, they could facilitate your
 #### Installing Ccache ####
 
     $ ./configure --prefix=$SHARE_HOME/ccache && make -j$NCORES && make install
-    $ cd $SHARE_HOME/ccache/bin/ && ln -s ccache gcc && ln -s ccache g++ && ln -s ccache cc && ln -s ccache c++
-    $ bash -c 'cd $SHARE_HOME/ccache/bin/ && ln -s ccache gcc && ln -s ccache g++ && ln -s ccache cc && ln -s ccache c++'
+    $ ccache_bin=$SHARE_HOME/ccache/bin bash -c 'cd $ccache_bin && ln -s ccache gcc && ln -s ccache g++ && ln -s ccache cc && ln -s ccache c++'
 
 #### Setting Ccache Environment Variables #### 
 
@@ -272,7 +285,5 @@ The following are not ForkBase dependencies. Instead, they could facilitate your
 
 You may also configure caching properties using `-F` and `-M` options. For example, 
 
-    $ ccache -F  # this sets no limit to the number of files
+    $ ccache -F 0   # this sets no limit to the number of files
     $ ccache -M 1G  # this sets the cache size to 1 GB
-
- 
