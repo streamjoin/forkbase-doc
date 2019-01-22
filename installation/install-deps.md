@@ -263,6 +263,30 @@ Copy the unzipped `apache-maven-xxx` folder to `$SHARE_HOME/maven/`.
 
 You should set `MAVEN_VER` according to your downloaded version.
 
+### Python 3 ###
+
+[*download*](https://www.python.org/downloads/source/)
+
+#### Resolving Python 3 Dependencies ####
+
+Ubuntu:
+
+    $ sudo apt-get install libffi-dev
+
+RHEL/CentOS/Fedora:
+
+    $ sudo yum install libffi-devel
+
+#### Installing Python 3 ####
+
+    $ ./configure --prefix=$SHARE_HOME/python3 && make -j$NCORES && sudo make install
+
+#### Setting Python 3 Environment Variables ####
+
+    # Python 3
+    export PYTHON3_ROOT="$SHARE_HOME/python3"
+    export PATH="$PYTHON3_ROOT/bin:$PATH"
+
 ## Other ##
 
 The following are not ForkBase dependencies. Instead, they could facilitate your development work. 
