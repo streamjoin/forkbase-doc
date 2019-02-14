@@ -238,8 +238,8 @@ Copy the unzipped `jdk-xxx` folder to `$SHARE_HOME/java/`.
 
     # JDK
     export JAVA_VER="11.0.2"
-    export JAVA_HOME="$SHARE_HOME/java/jdk-$JAVA_VER"
-    export PATH="$JAVA_HOME/bin:$PATH"
+    export JAVA_HOME="${SHARE_HOME}/java/jdk-${JAVA_VER}"
+    export PATH="${JAVA_HOME}/bin:${PATH}"
 
 You should set `JAVA_VER` according to your downloaded version.
 
@@ -256,9 +256,9 @@ Copy the unzipped `apache-maven-xxx` folder to `$SHARE_HOME/maven/`.
 #### Setting Maven Environment Variables #### 
 
     # Maven
-    export MAVEN_VER="3.5.4"
-    export MAVEN_HOME="$SHARE_HOME/maven/apache-maven-$MAVEN_VER"
-    export PATH="$MAVEN_HOME/bin:$PATH"
+    export MAVEN_VER="3.6.0"
+    export MAVEN_HOME="${SHARE_HOME}/maven/apache-maven-${MAVEN_VER}"
+    export PATH="${MAVEN_HOME}/bin:${PATH}"
 
 You should set `MAVEN_VER` according to your downloaded version.
 
