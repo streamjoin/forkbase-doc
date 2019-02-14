@@ -20,7 +20,7 @@ The following commands and settings have been manually verified on Ubuntu 16.04 
 
 Ubuntu:
 
-    $ sudo apt install build-essential autoconf pkg-config libtool
+    $ sudo apt -y install build-essential autoconf pkg-config libtool
 
 RHEL/CentOS/Fedora:
 
@@ -60,7 +60,7 @@ Minimum required version: `3.11` ([*download*](https://cmake.org/download/))
 
 Ubuntu:
 
-    $ sudo apt install openssl
+    $ sudo apt -y install openssl
 
 
 RHEL/CentOS/Fedora:
@@ -184,7 +184,7 @@ Minimum required version: `5.8` ([*download*](https://github.com/facebook/rocksd
 
 Ubuntu:
 
-    $ sudo apt install libsnappy-dev zlib1g-dev libbz2-dev liblz4-dev libzstd-dev
+    $ sudo apt -y install libsnappy-dev zlib1g-dev libbz2-dev liblz4-dev libzstd-dev
 
 RHEL/CentOS/Fedora:
 
@@ -270,7 +270,7 @@ You should set `MAVEN_VER` according to your downloaded version.
 
 Ubuntu:
 
-    $ sudo apt-get install libffi-dev
+    $ sudo apt -y install libffi-dev
 
 RHEL/CentOS/Fedora:
 
