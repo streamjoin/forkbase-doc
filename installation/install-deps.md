@@ -217,13 +217,12 @@ Minimum required version: `1.8.0` ([*download*](https://github.com/google/google
 #### Setting Gtest Environment Variables #### 
 
     # gtest
-    export GTEST_ROOT="$SHARE_HOME/gtest"
-    export GTEST_LIB_DIR=`ls -d $GTEST_ROOT/lib*`
-    export CPATH="$GTEST_ROOT/include:$CPATH"
-    export LD_LIBRARY_PATH="$GTEST_LIB_DIR:$LD_LIBRARY_PATH"
-    export LIBRARY_PATH="$GTEST_LIB_DIR:$LIBRARY_PATH"
-    export CMAKE_INCLUDE_PATH="$GTEST_ROOT/include:$CMAKE_INCLUDE_PATH"
-    export CMAKE_LIBRARY_PATH="$GTEST_LIB_DIR:$CMAKE_LIBRARY_PATH"
+    export GTEST_ROOT="${SHARE_HOME}/gtest"
+    export CPATH="${GTEST_ROOT}/include:${CPATH}"
+    export LD_LIBRARY_PATH="${GTEST_ROOT}/lib:${LD_LIBRARY_PATH}"
+    export LIBRARY_PATH="${GTEST_ROOT}/lib:${LIBRARY_PATH}"
+    export CMAKE_INCLUDE_PATH="${GTEST_ROOT}/include:${CMAKE_INCLUDE_PATH}"
+    export CMAKE_LIBRARY_PATH="${GTEST_ROOT}/lib:${CMAKE_LIBRARY_PATH}"
 
 ### JDK ###
 
@@ -263,7 +262,7 @@ Copy the unzipped `apache-maven-xxx` folder to `$SHARE_HOME/maven/`.
 
 You should set `MAVEN_VER` according to your downloaded version.
 
-### Python 3 ###
+### Python ###
 
 [*download*](https://www.python.org/downloads/source/)
 
@@ -279,13 +278,20 @@ RHEL/CentOS/Fedora:
 
 #### Installing Python 3 ####
 
-    $ ./configure --prefix=$SHARE_HOME/python3 && make -j$NCORES && sudo make install
+    $ ./configure --prefix="${SHARE_HOME}/python3" && make -j "${NCORES}" && make install
 
-#### Setting Python 3 Environment Variables ####
+#### Installing Python 2 ####
 
-    # Python 3
-    export PYTHON3_ROOT="$SHARE_HOME/python3"
-    export PATH="$PYTHON3_ROOT/bin:$PATH"
+    $ ./configure --prefix="${SHARE_HOME}/python" && make -j "${NCORES}" && make install
+
+#### Setting Python Environment Variables ####
+
+    # Python
+    export PYTHON3_ROOT="${SHARE_HOME}/python3"
+    export PATH="${PYTHON3_ROOT}/bin:${PATH}"
+
+    export PYTHON_ROOT="${SHARE_HOME}/python"
+    export PATH="${PYTHON_ROOT}/bin:${PATH}"
 
 ## Other ##
 
