@@ -303,15 +303,15 @@ The following are not ForkBase dependencies. Instead, they could facilitate your
 
 #### Installing Ccache ####
 
-    $ ./configure --prefix=$SHARE_HOME/ccache && make -j$NCORES && make install
-    $ ccache_bin=$SHARE_HOME/ccache/bin bash -c 'cd $ccache_bin && ln -s ccache gcc && ln -s ccache g++ && ln -s ccache cc && ln -s ccache c++'
+    $ ./configure --prefix="${SHARE_HOME}/ccache" && make -j "${NCORES}" && make install
+    $ ccache_bin="${SHARE_HOME}/ccache/bin" bash -c 'cd "${ccache_bin}" && ln -s ccache gcc && ln -s ccache g++ && ln -s ccache cc && ln -s ccache c++'
 
 #### Setting Ccache Environment Variables #### 
 
     # ccache
-    export CCACHE_HOME="$SHARE_HOME/ccache"
-    export PATH="$CCACHE_HOME/bin:$PATH"
-    export MANPATH="$CCACHE_HOME/share/man:$MANPATH"
+    export CCACHE_HOME="${SHARE_HOME}/ccache"
+    export PATH="${CCACHE_HOME}/bin:${PATH}"
+    export MANPATH="${CCACHE_HOME}/share/man:${MANPATH}"
 
 You may also configure caching properties using `-F` and `-M` options. For example, 
 
