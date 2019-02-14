@@ -46,13 +46,13 @@ Minimum required version: `3.11` ([*download*](https://cmake.org/download/))
 
 #### Installing CMake ####
 
-    $ ./bootstrap --prefix=$SHARE_HOME/cmake && make -j$NCORES && make install
+    $ ./bootstrap --prefix="${SHARE_HOME}/cmake" --parallel="${NCORES}" && make -j "${NCORES}" && make install
 
 #### Setting CMake Environment Variables #### 
 
     # CMake
-    export CMAKE_HOME="$SHARE_HOME/cmake"
-    export PATH="$CMAKE_HOME/bin:$PATH"
+    export CMAKE_HOME="${SHARE_HOME}/cmake"
+    export PATH="${CMAKE_HOME}/bin:${PATH}"
 
 ### OpenSSL ###
 
@@ -80,10 +80,10 @@ Minimum required version: `1.66.0` ([*download*](https://www.boost.org/users/dow
 #### Setting Boost Environment Variables #### 
 
     # Boost
-    export BOOST_ROOT="$SHARE_HOME/boost"
-    export CPATH="$BOOST_ROOT/include:$CPATH"
-    export LD_LIBRARY_PATH="$BOOST_ROOT/lib:$LD_LIBRARY_PATH"
-    export LIBRARY_PATH="$BOOST_ROOT/lib:$LIBRARY_PATH"
+    export BOOST_ROOT="${SHARE_HOME}/boost"
+    export CPATH="${BOOST_ROOT}/include:${CPATH}"
+    export LD_LIBRARY_PATH="${BOOST_ROOT}/lib:${LD_LIBRARY_PATH}"
+    export LIBRARY_PATH="${BOOST_ROOT}/lib:${LIBRARY_PATH}"
 
 ### Gflags ###
 
@@ -96,12 +96,12 @@ Minimum required version: `2.1.1` ([*download*](https://github.com/gflags/gflags
 #### Setting Gflags Environment Variables #### 
 
     # gflags
-    export GFLAGS_ROOT="$SHARE_HOME/gflags"
-    export CPATH="$GFLAGS_ROOT/include:$CPATH"
-    export LD_LIBRARY_PATH="$GFLAGS_ROOT/lib:$LD_LIBRARY_PATH"
-    export LIBRARY_PATH="$GFLAGS_ROOT/lib:$LIBRARY_PATH"
-    export CMAKE_INCLUDE_PATH="$GFLAGS_ROOT/include:$CMAKE_INCLUDE_PATH"
-    export CMAKE_LIBRARY_PATH="$GFLAGS_ROOT/lib:$CMAKE_LIBRARY_PATH"
+    export GFLAGS_ROOT="${SHARE_HOME}/gflags"
+    export CPATH="${GFLAGS_ROOT}/include:${CPATH}"
+    export LD_LIBRARY_PATH="${GFLAGS_ROOT}/lib:${LD_LIBRARY_PATH}"
+    export LIBRARY_PATH="${GFLAGS_ROOT}/lib:${LIBRARY_PATH}"
+    export CMAKE_INCLUDE_PATH="${GFLAGS_ROOT}/include:${CMAKE_INCLUDE_PATH}"
+    export CMAKE_LIBRARY_PATH="${GFLAGS_ROOT}/lib:${CMAKE_LIBRARY_PATH}"
 
 ### Protocol Buffers ###
 
@@ -114,13 +114,13 @@ Minimum required version: `2.6.1` ([*download*](https://github.com/google/protob
 #### Setting Protobuf Environment Variables #### 
 
     # Protocol Buffers
-    export PROTOBUF_ROOT="$SHARE_HOME/protobuf"
-    export PATH="$PROTOBUF_ROOT/bin:$PATH"
-    export CPATH="$PROTOBUF_ROOT/include:$CPATH"
-    export LD_LIBRARY_PATH="$PROTOBUF_ROOT/lib:$LD_LIBRARY_PATH"
-    export LIBRARY_PATH="$PROTOBUF_ROOT/lib:$LIBRARY_PATH"
-    export CMAKE_INCLUDE_PATH="$PROTOBUF_ROOT/include:$CMAKE_INCLUDE_PATH"
-    export CMAKE_LIBRARY_PATH="$PROTOBUF_ROOT/lib:$CMAKE_LIBRARY_PATH"
+    export PROTOBUF_ROOT="${SHARE_HOME}/protobuf"
+    export PATH="${PROTOBUF_ROOT}/bin:${PATH}"
+    export CPATH="${PROTOBUF_ROOT}/include:${CPATH}"
+    export LD_LIBRARY_PATH="${PROTOBUF_ROOT}/lib:${LD_LIBRARY_PATH}"
+    export LIBRARY_PATH="${PROTOBUF_ROOT}/lib:${LIBRARY_PATH}"
+    export CMAKE_INCLUDE_PATH="${PROTOBUF_ROOT}/include:${CMAKE_INCLUDE_PATH}"
+    export CMAKE_LIBRARY_PATH="${PROTOBUF_ROOT}/lib:${CMAKE_LIBRARY_PATH}"
 
 ### Crypto++ ###
 
@@ -133,12 +133,12 @@ Minimum required version: `6.1.0` ([*download*](https://www.cryptopp.com/#downlo
 #### Setting Crypto++ Environment Variables ####
 
     # Crypto++
-    export CRYPTOPP_ROOT="$SHARE_HOME/cryptopp"
-    export CPATH="$CRYPTOPP_ROOT/include:$CPATH"
-    export LD_LIBRARY_PATH="$CRYPTOPP_ROOT/lib:$LD_LIBRARY_PATH"
-    export LIBRARY_PATH="$CRYPTOPP_ROOT/lib:$LIBRARY_PATH"
-    export CMAKE_INCLUDE_PATH="$CRYPTOPP_ROOT/include:$CMAKE_INCLUDE_PATH"
-    export CMAKE_LIBRARY_PATH="$CRYPTOPP_ROOT/lib:$CMAKE_LIBRARY_PATH"
+    export CRYPTOPP_ROOT="${SHARE_HOME}/cryptopp"
+    export CPATH="${CRYPTOPP_ROOT}/include:${CPATH}"
+    export LD_LIBRARY_PATH="${CRYPTOPP_ROOT}/lib:${LD_LIBRARY_PATH}"
+    export LIBRARY_PATH="${CRYPTOPP_ROOT}/lib:${LIBRARY_PATH}"
+    export CMAKE_INCLUDE_PATH="${CRYPTOPP_ROOT}/include:${CMAKE_INCLUDE_PATH}"
+    export CMAKE_LIBRARY_PATH="${CRYPTOPP_ROOT}/lib:${CMAKE_LIBRARY_PATH}"
 
 ### ZMQ ###
 
@@ -151,12 +151,12 @@ Minimum required version: `4.2.1` ([*download*](https://github.com/zeromq/libzmq
 #### Setting ZMQ Environment Variables ####
 
     # ZMQ
-    export ZMQ_ROOT="$SHARE_HOME/zmq"
-    export CPATH="$ZMQ_ROOT/include:$CPATH"
-    export LD_LIBRARY_PATH="$ZMQ_ROOT/lib:$LD_LIBRARY_PATH"
-    export LIBRARY_PATH="$ZMQ_ROOT/lib:$LIBRARY_PATH"
-    export CMAKE_INCLUDE_PATH="$ZMQ_ROOT/include:$CMAKE_INCLUDE_PATH"
-    export CMAKE_LIBRARY_PATH="$ZMQ_ROOT/lib:$CMAKE_LIBRARY_PATH"
+    export ZMQ_ROOT="${SHARE_HOME}/zmq"
+    export CPATH="${ZMQ_ROOT}/include:${CPATH}"
+    export LD_LIBRARY_PATH="${ZMQ_ROOT}/lib:${LD_LIBRARY_PATH}"
+    export LIBRARY_PATH="${ZMQ_ROOT}/lib:${LIBRARY_PATH}"
+    export CMAKE_INCLUDE_PATH="${ZMQ_ROOT}/include:${CMAKE_INCLUDE_PATH}"
+    export CMAKE_LIBRARY_PATH="${ZMQ_ROOT}/lib:${CMAKE_LIBRARY_PATH}"
 
 ### CZMQ ###
 
@@ -169,12 +169,12 @@ Minimum required version: `4.0.2` ([*download*](https://github.com/zeromq/czmq/r
 #### Setting CZMQ Environment Variables #### 
 
     # CZMQ
-    export CZMQ_ROOT="$SHARE_HOME/czmq"
-    export CPATH="$CZMQ_ROOT/include:$CPATH"
-    export LD_LIBRARY_PATH="$CZMQ_ROOT/lib:$LD_LIBRARY_PATH"
-    export LIBRARY_PATH="$CZMQ_ROOT/lib:$LIBRARY_PATH"
-    export CMAKE_INCLUDE_PATH="$CZMQ_ROOT/include:$CMAKE_INCLUDE_PATH"
-    export CMAKE_LIBRARY_PATH="$CZMQ_ROOT/lib:$CMAKE_LIBRARY_PATH"
+    export CZMQ_ROOT="${SHARE_HOME}/czmq"
+    export CPATH="${CZMQ_ROOT}/include:${CPATH}"
+    export LD_LIBRARY_PATH="${CZMQ_ROOT}/lib:${LD_LIBRARY_PATH}"
+    export LIBRARY_PATH="${CZMQ_ROOT}/lib:${LIBRARY_PATH}"
+    export CMAKE_INCLUDE_PATH="${CZMQ_ROOT}/include:${CMAKE_INCLUDE_PATH}"
+    export CMAKE_LIBRARY_PATH="${CZMQ_ROOT}/lib:${CMAKE_LIBRARY_PATH}"
 
 ### RocksDB ###
 
@@ -192,17 +192,17 @@ RHEL/CentOS/Fedora:
 
 #### Installing RocksDB ####
 
-    $ USE_RTTI=1 DISABLE_WARNING_AS_ERROR=ON bash -c 'make -j$NCORES shared_lib' && INSTALL_PATH=$SHARE_HOME/rocksdb bash -c 'make install-shared'
+    $ make shared_lib -j "${NCORES}" USE_RTTI=1 DISABLE_WARNING_AS_ERROR=ON && make install-shared INSTALL_PATH="${SHARE_HOME}/rocksdb"
 
 #### Setting RocksDB Environment Variables #### 
 
     # RocksDB
-    export ROCKSDB_ROOT="$SHARE_HOME/rocksdb"
-    export CPATH="$ROCKSDB_ROOT/include:$CPATH"
-    export LD_LIBRARY_PATH="$ROCKSDB_ROOT/lib:$LD_LIBRARY_PATH"
-    export LIBRARY_PATH="$ROCKSDB_ROOT/lib:$LIBRARY_PATH"
-    export CMAKE_INCLUDE_PATH="$ROCKSDB_ROOT/include:$CMAKE_INCLUDE_PATH"
-    export CMAKE_LIBRARY_PATH="$ROCKSDB_ROOT/lib:$CMAKE_LIBRARY_PATH"
+    export ROCKSDB_ROOT="${SHARE_HOME}/rocksdb"
+    export CPATH="${ROCKSDB_ROOT}/include:${CPATH}"
+    export LD_LIBRARY_PATH="${ROCKSDB_ROOT}/lib:${LD_LIBRARY_PATH}"
+    export LIBRARY_PATH="${ROCKSDB_ROOT}/lib:${LIBRARY_PATH}"
+    export CMAKE_INCLUDE_PATH="${ROCKSDB_ROOT}/include:${CMAKE_INCLUDE_PATH}"
+    export CMAKE_LIBRARY_PATH="${ROCKSDB_ROOT}/lib:${CMAKE_LIBRARY_PATH}"
 
 ## Optional ##
 
