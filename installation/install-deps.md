@@ -1,6 +1,6 @@
 # Installing ForkBase Dependencies #
 
-*Quick Reference (A-Z order):* [*boost*](#boost), [*ccache*](#ccache), [*CMake*](#cmake), [*crypto++*](#crypto), [*CZMQ*](#czmq), [*gflags*](#gflags), [*gtest*](#google-test), [*JDK*](#jdk), [*Maven*](#maven), [*OpenSSL*](#openssl), [*protobuf*](#protocol-buffers), [*Python 3*](#python-3), [*RocksDB*](#rocksdb), [*ZMQ*](#zmq) 
+*Quick Reference (A-Z order):* [*boost*](#boost), [*ccache*](#ccache), [*CMake*](#cmake), [*crypto++*](#crypto), [*CZMQ*](#czmq), [*gflags*](#gflags), [*gtest*](#google-test), [*JDK*](#jdk), [*Maven*](#maven), [*OpenSSL*](#openssl), [*protobuf*](#protocol-buffers), [*Python*](#python), [*RocksDB*](#rocksdb), [*ZMQ*](#zmq) 
 
 This documentation shows the key compilation commands and environment variable settings for installing ForkBase dependencies. All the dependencies are installed through the corresponding source-code releases. Generally, in order to install a dependency, you need to 
 
@@ -263,7 +263,7 @@ Copy the unzipped `apache-maven-xxx` folder to `$SHARE_HOME/maven/`.
 
 You should set `MAVEN_VER` according to your downloaded version.
 
-### Python 3 ###
+### Python ###
 
 [*download*](https://www.python.org/downloads/source/)
 
@@ -279,13 +279,20 @@ RHEL/CentOS/Fedora:
 
 #### Installing Python 3 ####
 
-    $ ./configure --prefix=$SHARE_HOME/python3 && make -j$NCORES && sudo make install
+    $ ./configure --prefix=$SHARE_HOME/python3 && make -j$NCORES && make install
 
-#### Setting Python 3 Environment Variables ####
+#### Installing Python 2 ####
 
-    # Python 3
+    $ ./configure --prefix=$SHARE_HOME/python && make -j$NCORES && make install
+
+#### Setting Python Environment Variables ####
+
+    # Python
     export PYTHON3_ROOT="$SHARE_HOME/python3"
     export PATH="$PYTHON3_ROOT/bin:$PATH"
+
+    export PYTHON_ROOT="$SHARE_HOME/python"
+    export PATH="$PYTHON_ROOT/bin:$PATH"
 
 ## Other ##
 
