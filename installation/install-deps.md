@@ -20,7 +20,7 @@ The following commands and settings have been manually verified on Ubuntu 16.04 
 
 Ubuntu:
 
-    $ sudo apt install build-essential autoconf pkg-config libtool
+    $ sudo apt -y install build-essential autoconf pkg-config libtool
 
 RHEL/CentOS/Fedora:
 
@@ -46,13 +46,13 @@ Minimum required version: `3.11` ([*download*](https://cmake.org/download/))
 
 #### Installing CMake ####
 
-    $ ./bootstrap --prefix=$SHARE_HOME/cmake && make -j$NCORES && make install
+    $ ./bootstrap --prefix="${SHARE_HOME}/cmake" --parallel="${NCORES}" && make -j "${NCORES}" && make install
 
 #### Setting CMake Environment Variables #### 
 
     # CMake
-    export CMAKE_HOME="$SHARE_HOME/cmake"
-    export PATH="$CMAKE_HOME/bin:$PATH"
+    export CMAKE_HOME="${SHARE_HOME}/cmake"
+    export PATH="${CMAKE_HOME}/bin:${PATH}"
 
 ### OpenSSL ###
 
@@ -60,7 +60,7 @@ Minimum required version: `3.11` ([*download*](https://cmake.org/download/))
 
 Ubuntu:
 
-    $ sudo apt install openssl
+    $ sudo apt -y install openssl
 
 
 RHEL/CentOS/Fedora:
@@ -80,10 +80,10 @@ Minimum required version: `1.66.0` ([*download*](https://www.boost.org/users/dow
 #### Setting Boost Environment Variables #### 
 
     # Boost
-    export BOOST_ROOT="$SHARE_HOME/boost"
-    export CPATH="$BOOST_ROOT/include:$CPATH"
-    export LD_LIBRARY_PATH="$BOOST_ROOT/lib:$LD_LIBRARY_PATH"
-    export LIBRARY_PATH="$BOOST_ROOT/lib:$LIBRARY_PATH"
+    export BOOST_ROOT="${SHARE_HOME}/boost"
+    export CPATH="${BOOST_ROOT}/include:${CPATH}"
+    export LD_LIBRARY_PATH="${BOOST_ROOT}/lib:${LD_LIBRARY_PATH}"
+    export LIBRARY_PATH="${BOOST_ROOT}/lib:${LIBRARY_PATH}"
 
 ### Gflags ###
 
@@ -96,12 +96,12 @@ Minimum required version: `2.1.1` ([*download*](https://github.com/gflags/gflags
 #### Setting Gflags Environment Variables #### 
 
     # gflags
-    export GFLAGS_ROOT="$SHARE_HOME/gflags"
-    export CPATH="$GFLAGS_ROOT/include:$CPATH"
-    export LD_LIBRARY_PATH="$GFLAGS_ROOT/lib:$LD_LIBRARY_PATH"
-    export LIBRARY_PATH="$GFLAGS_ROOT/lib:$LIBRARY_PATH"
-    export CMAKE_INCLUDE_PATH="$GFLAGS_ROOT/include:$CMAKE_INCLUDE_PATH"
-    export CMAKE_LIBRARY_PATH="$GFLAGS_ROOT/lib:$CMAKE_LIBRARY_PATH"
+    export GFLAGS_ROOT="${SHARE_HOME}/gflags"
+    export CPATH="${GFLAGS_ROOT}/include:${CPATH}"
+    export LD_LIBRARY_PATH="${GFLAGS_ROOT}/lib:${LD_LIBRARY_PATH}"
+    export LIBRARY_PATH="${GFLAGS_ROOT}/lib:${LIBRARY_PATH}"
+    export CMAKE_INCLUDE_PATH="${GFLAGS_ROOT}/include:${CMAKE_INCLUDE_PATH}"
+    export CMAKE_LIBRARY_PATH="${GFLAGS_ROOT}/lib:${CMAKE_LIBRARY_PATH}"
 
 ### Protocol Buffers ###
 
@@ -114,13 +114,13 @@ Minimum required version: `2.6.1` ([*download*](https://github.com/google/protob
 #### Setting Protobuf Environment Variables #### 
 
     # Protocol Buffers
-    export PROTOBUF_ROOT="$SHARE_HOME/protobuf"
-    export PATH="$PROTOBUF_ROOT/bin:$PATH"
-    export CPATH="$PROTOBUF_ROOT/include:$CPATH"
-    export LD_LIBRARY_PATH="$PROTOBUF_ROOT/lib:$LD_LIBRARY_PATH"
-    export LIBRARY_PATH="$PROTOBUF_ROOT/lib:$LIBRARY_PATH"
-    export CMAKE_INCLUDE_PATH="$PROTOBUF_ROOT/include:$CMAKE_INCLUDE_PATH"
-    export CMAKE_LIBRARY_PATH="$PROTOBUF_ROOT/lib:$CMAKE_LIBRARY_PATH"
+    export PROTOBUF_ROOT="${SHARE_HOME}/protobuf"
+    export PATH="${PROTOBUF_ROOT}/bin:${PATH}"
+    export CPATH="${PROTOBUF_ROOT}/include:${CPATH}"
+    export LD_LIBRARY_PATH="${PROTOBUF_ROOT}/lib:${LD_LIBRARY_PATH}"
+    export LIBRARY_PATH="${PROTOBUF_ROOT}/lib:${LIBRARY_PATH}"
+    export CMAKE_INCLUDE_PATH="${PROTOBUF_ROOT}/include:${CMAKE_INCLUDE_PATH}"
+    export CMAKE_LIBRARY_PATH="${PROTOBUF_ROOT}/lib:${CMAKE_LIBRARY_PATH}"
 
 ### Crypto++ ###
 
@@ -133,12 +133,12 @@ Minimum required version: `6.1.0` ([*download*](https://www.cryptopp.com/#downlo
 #### Setting Crypto++ Environment Variables ####
 
     # Crypto++
-    export CRYPTOPP_ROOT="$SHARE_HOME/cryptopp"
-    export CPATH="$CRYPTOPP_ROOT/include:$CPATH"
-    export LD_LIBRARY_PATH="$CRYPTOPP_ROOT/lib:$LD_LIBRARY_PATH"
-    export LIBRARY_PATH="$CRYPTOPP_ROOT/lib:$LIBRARY_PATH"
-    export CMAKE_INCLUDE_PATH="$CRYPTOPP_ROOT/include:$CMAKE_INCLUDE_PATH"
-    export CMAKE_LIBRARY_PATH="$CRYPTOPP_ROOT/lib:$CMAKE_LIBRARY_PATH"
+    export CRYPTOPP_ROOT="${SHARE_HOME}/cryptopp"
+    export CPATH="${CRYPTOPP_ROOT}/include:${CPATH}"
+    export LD_LIBRARY_PATH="${CRYPTOPP_ROOT}/lib:${LD_LIBRARY_PATH}"
+    export LIBRARY_PATH="${CRYPTOPP_ROOT}/lib:${LIBRARY_PATH}"
+    export CMAKE_INCLUDE_PATH="${CRYPTOPP_ROOT}/include:${CMAKE_INCLUDE_PATH}"
+    export CMAKE_LIBRARY_PATH="${CRYPTOPP_ROOT}/lib:${CMAKE_LIBRARY_PATH}"
 
 ### ZMQ ###
 
@@ -151,12 +151,12 @@ Minimum required version: `4.2.1` ([*download*](https://github.com/zeromq/libzmq
 #### Setting ZMQ Environment Variables ####
 
     # ZMQ
-    export ZMQ_ROOT="$SHARE_HOME/zmq"
-    export CPATH="$ZMQ_ROOT/include:$CPATH"
-    export LD_LIBRARY_PATH="$ZMQ_ROOT/lib:$LD_LIBRARY_PATH"
-    export LIBRARY_PATH="$ZMQ_ROOT/lib:$LIBRARY_PATH"
-    export CMAKE_INCLUDE_PATH="$ZMQ_ROOT/include:$CMAKE_INCLUDE_PATH"
-    export CMAKE_LIBRARY_PATH="$ZMQ_ROOT/lib:$CMAKE_LIBRARY_PATH"
+    export ZMQ_ROOT="${SHARE_HOME}/zmq"
+    export CPATH="${ZMQ_ROOT}/include:${CPATH}"
+    export LD_LIBRARY_PATH="${ZMQ_ROOT}/lib:${LD_LIBRARY_PATH}"
+    export LIBRARY_PATH="${ZMQ_ROOT}/lib:${LIBRARY_PATH}"
+    export CMAKE_INCLUDE_PATH="${ZMQ_ROOT}/include:${CMAKE_INCLUDE_PATH}"
+    export CMAKE_LIBRARY_PATH="${ZMQ_ROOT}/lib:${CMAKE_LIBRARY_PATH}"
 
 ### CZMQ ###
 
@@ -169,12 +169,12 @@ Minimum required version: `4.0.2` ([*download*](https://github.com/zeromq/czmq/r
 #### Setting CZMQ Environment Variables #### 
 
     # CZMQ
-    export CZMQ_ROOT="$SHARE_HOME/czmq"
-    export CPATH="$CZMQ_ROOT/include:$CPATH"
-    export LD_LIBRARY_PATH="$CZMQ_ROOT/lib:$LD_LIBRARY_PATH"
-    export LIBRARY_PATH="$CZMQ_ROOT/lib:$LIBRARY_PATH"
-    export CMAKE_INCLUDE_PATH="$CZMQ_ROOT/include:$CMAKE_INCLUDE_PATH"
-    export CMAKE_LIBRARY_PATH="$CZMQ_ROOT/lib:$CMAKE_LIBRARY_PATH"
+    export CZMQ_ROOT="${SHARE_HOME}/czmq"
+    export CPATH="${CZMQ_ROOT}/include:${CPATH}"
+    export LD_LIBRARY_PATH="${CZMQ_ROOT}/lib:${LD_LIBRARY_PATH}"
+    export LIBRARY_PATH="${CZMQ_ROOT}/lib:${LIBRARY_PATH}"
+    export CMAKE_INCLUDE_PATH="${CZMQ_ROOT}/include:${CMAKE_INCLUDE_PATH}"
+    export CMAKE_LIBRARY_PATH="${CZMQ_ROOT}/lib:${CMAKE_LIBRARY_PATH}"
 
 ### RocksDB ###
 
@@ -184,7 +184,7 @@ Minimum required version: `5.8` ([*download*](https://github.com/facebook/rocksd
 
 Ubuntu:
 
-    $ sudo apt install libsnappy-dev zlib1g-dev libbz2-dev liblz4-dev libzstd-dev
+    $ sudo apt -y install libsnappy-dev zlib1g-dev libbz2-dev liblz4-dev libzstd-dev
 
 RHEL/CentOS/Fedora:
 
@@ -192,17 +192,17 @@ RHEL/CentOS/Fedora:
 
 #### Installing RocksDB ####
 
-    $ USE_RTTI=1 DISABLE_WARNING_AS_ERROR=ON bash -c 'make -j$NCORES shared_lib' && INSTALL_PATH=$SHARE_HOME/rocksdb bash -c 'make install-shared'
+    $ make shared_lib -j "${NCORES}" USE_RTTI=1 DISABLE_WARNING_AS_ERROR=ON && make install-shared INSTALL_PATH="${SHARE_HOME}/rocksdb"
 
 #### Setting RocksDB Environment Variables #### 
 
     # RocksDB
-    export ROCKSDB_ROOT="$SHARE_HOME/rocksdb"
-    export CPATH="$ROCKSDB_ROOT/include:$CPATH"
-    export LD_LIBRARY_PATH="$ROCKSDB_ROOT/lib:$LD_LIBRARY_PATH"
-    export LIBRARY_PATH="$ROCKSDB_ROOT/lib:$LIBRARY_PATH"
-    export CMAKE_INCLUDE_PATH="$ROCKSDB_ROOT/include:$CMAKE_INCLUDE_PATH"
-    export CMAKE_LIBRARY_PATH="$ROCKSDB_ROOT/lib:$CMAKE_LIBRARY_PATH"
+    export ROCKSDB_ROOT="${SHARE_HOME}/rocksdb"
+    export CPATH="${ROCKSDB_ROOT}/include:${CPATH}"
+    export LD_LIBRARY_PATH="${ROCKSDB_ROOT}/lib:${LD_LIBRARY_PATH}"
+    export LIBRARY_PATH="${ROCKSDB_ROOT}/lib:${LIBRARY_PATH}"
+    export CMAKE_INCLUDE_PATH="${ROCKSDB_ROOT}/include:${CMAKE_INCLUDE_PATH}"
+    export CMAKE_LIBRARY_PATH="${ROCKSDB_ROOT}/lib:${CMAKE_LIBRARY_PATH}"
 
 ## Optional ##
 
@@ -217,13 +217,12 @@ Minimum required version: `1.8.0` ([*download*](https://github.com/google/google
 #### Setting Gtest Environment Variables #### 
 
     # gtest
-    export GTEST_ROOT="$SHARE_HOME/gtest"
-    export GTEST_LIB_DIR=`ls -d $GTEST_ROOT/lib*`
-    export CPATH="$GTEST_ROOT/include:$CPATH"
-    export LD_LIBRARY_PATH="$GTEST_LIB_DIR:$LD_LIBRARY_PATH"
-    export LIBRARY_PATH="$GTEST_LIB_DIR:$LIBRARY_PATH"
-    export CMAKE_INCLUDE_PATH="$GTEST_ROOT/include:$CMAKE_INCLUDE_PATH"
-    export CMAKE_LIBRARY_PATH="$GTEST_LIB_DIR:$CMAKE_LIBRARY_PATH"
+    export GTEST_ROOT="${SHARE_HOME}/gtest"
+    export CPATH="${GTEST_ROOT}/include:${CPATH}"
+    export LD_LIBRARY_PATH="${GTEST_ROOT}/lib:${LD_LIBRARY_PATH}"
+    export LIBRARY_PATH="${GTEST_ROOT}/lib:${LIBRARY_PATH}"
+    export CMAKE_INCLUDE_PATH="${GTEST_ROOT}/include:${CMAKE_INCLUDE_PATH}"
+    export CMAKE_LIBRARY_PATH="${GTEST_ROOT}/lib:${CMAKE_LIBRARY_PATH}"
 
 ### JDK ###
 
@@ -239,8 +238,8 @@ Copy the unzipped `jdk-xxx` folder to `$SHARE_HOME/java/`.
 
     # JDK
     export JAVA_VER="11.0.2"
-    export JAVA_HOME="$SHARE_HOME/java/jdk-$JAVA_VER"
-    export PATH="$JAVA_HOME/bin:$PATH"
+    export JAVA_HOME="${SHARE_HOME}/java/jdk-${JAVA_VER}"
+    export PATH="${JAVA_HOME}/bin:${PATH}"
 
 You should set `JAVA_VER` according to your downloaded version.
 
@@ -257,9 +256,9 @@ Copy the unzipped `apache-maven-xxx` folder to `$SHARE_HOME/maven/`.
 #### Setting Maven Environment Variables #### 
 
     # Maven
-    export MAVEN_VER="3.5.4"
-    export MAVEN_HOME="$SHARE_HOME/maven/apache-maven-$MAVEN_VER"
-    export PATH="$MAVEN_HOME/bin:$PATH"
+    export MAVEN_VER="3.6.0"
+    export MAVEN_HOME="${SHARE_HOME}/maven/apache-maven-${MAVEN_VER}"
+    export PATH="${MAVEN_HOME}/bin:${PATH}"
 
 You should set `MAVEN_VER` according to your downloaded version.
 
@@ -271,7 +270,7 @@ You should set `MAVEN_VER` according to your downloaded version.
 
 Ubuntu:
 
-    $ sudo apt-get install libffi-dev
+    $ sudo apt -y install libffi-dev
 
 RHEL/CentOS/Fedora:
 
@@ -279,20 +278,20 @@ RHEL/CentOS/Fedora:
 
 #### Installing Python 3 ####
 
-    $ ./configure --prefix=$SHARE_HOME/python3 && make -j$NCORES && make install
+    $ ./configure --prefix="${SHARE_HOME}/python3" && make -j "${NCORES}" && make install
 
 #### Installing Python 2 ####
 
-    $ ./configure --prefix=$SHARE_HOME/python && make -j$NCORES && make install
+    $ ./configure --prefix="${SHARE_HOME}/python" && make -j "${NCORES}" && make install
 
 #### Setting Python Environment Variables ####
 
     # Python
-    export PYTHON3_ROOT="$SHARE_HOME/python3"
-    export PATH="$PYTHON3_ROOT/bin:$PATH"
+    export PYTHON3_ROOT="${SHARE_HOME}/python3"
+    export PATH="${PYTHON3_ROOT}/bin:${PATH}"
 
-    export PYTHON_ROOT="$SHARE_HOME/python"
-    export PATH="$PYTHON_ROOT/bin:$PATH"
+    export PYTHON_ROOT="${SHARE_HOME}/python"
+    export PATH="${PYTHON_ROOT}/bin:${PATH}"
 
 ## Other ##
 
@@ -304,15 +303,15 @@ The following are not ForkBase dependencies. Instead, they could facilitate your
 
 #### Installing Ccache ####
 
-    $ ./configure --prefix=$SHARE_HOME/ccache && make -j$NCORES && make install
-    $ ccache_bin=$SHARE_HOME/ccache/bin bash -c 'cd $ccache_bin && ln -s ccache gcc && ln -s ccache g++ && ln -s ccache cc && ln -s ccache c++'
+    $ ./configure --prefix="${SHARE_HOME}/ccache" && make -j "${NCORES}" && make install
+    $ ccache_bin="${SHARE_HOME}/ccache/bin" bash -c 'cd "${ccache_bin}" && ln -s ccache gcc && ln -s ccache g++ && ln -s ccache cc && ln -s ccache c++'
 
 #### Setting Ccache Environment Variables #### 
 
     # ccache
-    export CCACHE_HOME="$SHARE_HOME/ccache"
-    export PATH="$CCACHE_HOME/bin:$PATH"
-    export MANPATH="$CCACHE_HOME/share/man:$MANPATH"
+    export CCACHE_HOME="${SHARE_HOME}/ccache"
+    export PATH="${CCACHE_HOME}/bin:${PATH}"
+    export MANPATH="${CCACHE_HOME}/share/man:${MANPATH}"
 
 You may also configure caching properties using `-F` and `-M` options. For example, 
 
